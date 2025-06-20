@@ -94,11 +94,11 @@ Let's connect!
 
 📬 Contact
 
-    📧 Email: yourmail@example.com
+    📧 Email: kevinsolankistudy@gmail.com
 
-    💼 LinkedIn: linkedin.com/in/yourprofile
+    💼 LinkedIn: www.linkedin.com/in/kevin-solanki-8bb1082a2
 
-    💻 GitHub: github.com/yourgithub
+    💻 GitHub: https://github.com/itskvsin
 
 
 
