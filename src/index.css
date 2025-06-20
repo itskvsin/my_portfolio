@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Savante';
+    src: url('src/assets/Savate/static/Savate-Medium.ttf') format('truetype');
+    font-weight: 400;
+  }
+
+*{
+    font-family: 'Savante';
+}
