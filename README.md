@@ -103,5 +103,3 @@ Let's connect!
 
 
 ---
-
-Let me know when you're ready to add the deployment instructions or a badge section — I can generate those instantly!
