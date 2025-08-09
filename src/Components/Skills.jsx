@@ -1,6 +1,6 @@
 export default function Skills({skillCategories}) {
     return (
-      <section id="skills" className="px-6 py-16 h-screen bg-black text-white">
+      <section id="skills" className="px-6 py-20 h-screen bg-black text-white">
         <h3 className="text-3xl font-bold mb-12 text-center">🛠️ Skills</h3>
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 text-black">

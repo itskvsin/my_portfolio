@@ -2,7 +2,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Information = () => {
   return (
-    <section id="about" className=" h-screen bg-black text-white py-16 px-8">
+    <section id="about" className=" h-screen bg-black text-white py-20 px-8">
       <div className="container w-full mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-full flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-center">

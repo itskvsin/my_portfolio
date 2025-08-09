@@ -1,6 +1,6 @@
 export default function Project({ projects }) {
     return (
-      <section id="projects" className="px-6 py-16 bg-black text-white h-screen">
+      <section id="projects" className="px-6 py-20 bg-black text-white h-screen">
         <h3 className="text-3xl font-bold mb-10 text-center">🚀 Projects</h3>
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-black">
