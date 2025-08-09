@@ -22,9 +22,7 @@ export default function Hero() {
           </div>
           </div>
           <p className="text-lg font-medium">
-            I'm a <span className="text-blue-400">Frontend Developer</span> who builds beautiful, responsive websites using:
-          </p>
-          <p className="mt-2 text-gray-300">React, HTML, CSS, and JavaScript</p>
+            I'm a <span className="text-blue-400">Frontend Developer</span> who builds beautiful,<br></br> responsive websites </p>
         </div>
       </section>
 </div>
