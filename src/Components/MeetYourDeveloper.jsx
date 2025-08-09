@@ -10,19 +10,12 @@ const Information = () => {
           </h2>
           <div className="flex items-center justify-evenly">
             {/* Image Section */}
-            <div className="md:w-2/4 object-contain flex justify-center">
-              <img
-                src="src\assets\Images\upscaledImage-removebg-preview1.png"
-                alt="Kevin"
-                className="w-96 h-96 bg-black rounded-lg shadow-2xl object-cover"
-              />
-            </div>
-
-            {/* Text Section */}
             <div className="w-2/4">
               <p className="text-lg leading-relaxed">
-                Hi, I'm Kevin — a frontend developer who builds beautiful and
-                functional websites using React, HTML, CSS, and JavaScript.
+                Hi, I'm Kevin — a frontend developer and a little bit of Backend Developer who builds beautiful and
+                functional websites using React + TailwindCSS.
+                I also have a little bit of experience in Node.js, Express.js, and MongoDB.
+                I'm also a little bit of a student, so I'm always learning new things.
                 Passionate about clean code and smooth user experiences, I love
                 transforming ideas into responsive and engaging web apps.
               </p>
@@ -58,6 +51,15 @@ const Information = () => {
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Text Section */}
+            <div className="md:w-2/4 object-contain flex justify-center">
+              <img
+                src="src\assets\Images\upscaledImage-removebg-preview1.png"
+                alt="Kevin"
+                className="w-96 h-96 bg-black rounded-lg shadow-2xl object-cover"
+              />
             </div>
           </div>{" "}
         </div>
