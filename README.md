@@ -26,26 +26,7 @@ A modern, responsive, and animated portfolio website built with React, Tailwind 
 ## 📁 Folder Structure
 ```
 portfolio/
-├── src/
-│ ├── assets/
-│ │ └── Images/ 
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── Hero.jsx
-│ │ ├── Skills.jsx
-│ │ ├── Project.jsx
-│ │ ├── Contact.jsx
-│ │ ├── MeetTheDeveloper.jsx
-│ │ └── ReturnBtn.jsx
-│ ├── utils/
-│ │ ├── projects.js
-│ │ ├── skillCategories.js
-│ │ ├── Divider.jsx
-│ │ └── SocialLinks.js
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── index.css
-├── .env
+....(will be added later)
 ├── package.json
 └── README.md
 
