@@ -14,7 +14,8 @@ import {
   Calendar,
   ExternalLink,
 } from "lucide-react";
-import Cal,{ getCalApi } from "@calcom/embed-react";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import Aurora from "./components/Aurora";
 
 const App = () => {
   const [userName, setUserName] = useState("");
@@ -52,28 +53,47 @@ const App = () => {
     { name: "Apex", logo: "AP" },
   ];
 
-  const clientProjects = [
+  const projects = [
     {
-      client: "TechStart",
-      problem: "Legacy dashboard causing 40% user drop-off",
-      solution:
-        "Redesigned analytics platform with real-time data visualization",
-      tech: ["React", "D3.js", "WebSocket", "Redis"],
-      impact: "65% increase in daily active users",
+      title: "MT Music Academy",
+      type: "Real-World Project",
+      description:
+        "A modern, responsive website built to present music lessons and instructor offerings with smooth animations and a clean user experience across devices.",
+      role: "Full Implementation",
+      focus: ["UI/UX Design", "Frontend Development", "Motion & Interaction"],
+      tech: ["Next.js", "React", "Framer Motion"],
+      image: 'src/assets/Savate/images/projects/mtma.png',
+      link: "https://mt-music-academy.vercel.app/",
     },
     {
-      client: "Velocity",
-      problem: "E-commerce checkout abandonment at 78%",
-      solution: "Streamlined 1-click checkout with guest options",
-      tech: ["Next.js", "Stripe", "PostgreSQL"],
-      impact: "Reduced abandonment to 24%",
+      title: "TeamK",
+      type: "Collaborative Project",
+      description:
+        "A motion-heavy, interactive website built with GSAP, featuring smooth scroll-based animations and micro-interactions focused on visual storytelling and performance-aware motion.",
+      role: "Frontend Development",
+      focus: [
+        "GSAP Animations",
+        "Scroll-based Interactions",
+        "Motion Performance",
+      ],
+      tech: ["Next.js", "React", "GSAP", "Framer Motion"],
+      image: 'src/assets/Savate/images/projects/teamk.png',
+      link: "https://teamk.vercel.app/",
     },
     {
-      client: "Nebula",
-      problem: "Mobile app performance below industry standard",
-      solution: "Optimized rendering, lazy loading, and caching strategy",
-      tech: ["React Native", "GraphQL", "Apollo"],
-      impact: "3.2s → 0.8s average load time",
+      title: "YNOTNOW",
+      type: "Collaborative Project",
+      description:
+        "A headless e-commerce frontend featuring product listings, filtering, variant selection, and a persistent cart experience, built with modern e-commerce best practices.",
+      role: "Frontend Development",
+      focus: [
+        "E-Commerce UI",
+        "Cart & Checkout Logic",
+        "Performance & Accessibility",
+      ],
+      tech: ["Next.js", "React", "Shopify Storefront API"],
+      image: 'src/assets/Savate/images/projects/ynotnow.png',
+      link: "https://ynotnow-one.vercel.app/demo",
     },
   ];
 
@@ -101,7 +121,11 @@ const App = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "30min" });
-      cal("ui", { hideEventTypeDetails: false, layout: "month_view" , theme: "dark"});
+      cal("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view",
+        theme: "dark",
+      });
     })();
   }, []);
 
@@ -137,71 +161,79 @@ const App = () => {
   return (
     <div className="bg-[#0a0a0a] text-gray-100 min-h-screen">
       {/* Hero Section */}
-      <motion.section
-        ref={heroRef}
-        style={{ opacity: prefersReducedMotion ? 1 : heroOpacity }}
-        className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"
-      >
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
+      <section>
+        <Aurora
+          colorStops={["#6EE7B7", "#A78BFA", "#6366F1"]}
+          blend={0.45}
+          amplitude={0.35}
+          speed={0.45}
+        />
+        <motion.section
+          ref={heroRef}
+          style={{ opacity: prefersReducedMotion ? 1 : heroOpacity }}
+          className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"
         >
-          <motion.h1
-            variants={fadeInUp}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } },
+            }}
+            className="z-1"
           >
-            I build products that
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-              convert and scale
-            </span>
-          </motion.h1>
-
-          <motion.p
-            variants={fadeInUp}
-            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl"
-          >
-            Senior frontend engineer specializing in high-performance web
-            applications. From MVP to enterprise, I ship clean code that
-            delivers results.
-          </motion.p>
-
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-            <a
-              href="#client-work"
-              className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+            <motion.h1
+              variants={fadeInUp}
+              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             >
-              View Work <ArrowRight size={20} />
-            </a>
-            <a
-              href="#contact"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#1a1a1a] border border-gray-800 font-semibold rounded-lg hover:border-gray-600 transition-colors flex items-center gap-2"
+              I build products that
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                convert and scale
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl"
             >
-              <Calendar size={20} /> Book a Call
-            </a>
-            {!hasTriggeredSarcasm && (
-              <button
-                onClick={handleSarcasmTrigger}
-                className="px-6 py-4 bg-[#1a1a1a] border border-yellow-900/30 text-yellow-500/70 text-sm rounded-lg hover:border-yellow-700/50 transition-colors"
+              Senior frontend engineer specializing in high-performance web
+              applications. From MVP to enterprise, I ship clean code that
+              delivers results.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+              <a
+                href="#client-work"
+                className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
               >
-                ⚠️ I broke a UX rule (don't touch me)
-              </button>
-            )}
+                View Work <ArrowRight size={20} />
+              </a>
+              <a
+                href="#contact"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-[#1a1a1a] border border-gray-800 font-semibold rounded-lg hover:border-gray-600 transition-colors flex items-center gap-2"
+              >
+                <Calendar size={20} /> Book a Call
+              </a>
+              {!hasTriggeredSarcasm && (
+                <button
+                  onClick={handleSarcasmTrigger}
+                  className="px-6 py-4 bg-[#1a1a1a] border border-yellow-900/30 text-yellow-500/70 text-sm rounded-lg hover:border-yellow-700/50 transition-colors"
+                >
+                  ⚠️ I broke a UX rule (do not touch me)
+                </button>
+              )}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </motion.section>
-
+        </motion.section>
+      </section>
       {/* Skills Marquee */}
       <div className="border-y border-gray-900 py-6 overflow-hidden bg-[#0f0f0f]">
         <motion.div
           className="flex gap-8 whitespace-nowrap"
           animate={{ x: prefersReducedMotion ? 0 : [0, -1920] }}
           transition={{
-            duration: 40,
+            duration: 20,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -243,79 +275,11 @@ const App = () => {
       )}
 
 
-      {/* Featured Client Work */}
-      <section
-        id="client-work"
-        ref={clientWorkRef}
-        className="px-6 md:px-12 lg:px-24 py-24 max-w-7xl mx-auto"
-      >
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Client Projects
-          </h2>
-          <p className="text-xl text-gray-400">
-            Real problems. Real solutions. Real results.
-          </p>
-        </div>
-
-        <div className="space-y-12">
-          {clientProjects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -50 }}
-              animate={isClientWorkInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: i * 0.2 }}
-              className="bg-[#0f0f0f] border border-gray-900 rounded-2xl p-8 md:p-12 hover:border-gray-800 transition-colors"
-            >
-              <div className="flex items-start justify-between mb-6">
-                <h3 className="text-2xl font-bold">{project.client}</h3>
-                <ExternalLink className="text-gray-600" size={20} />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">
-                    Problem
-                  </p>
-                  <p className="text-gray-300">{project.problem}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">
-                    Solution
-                  </p>
-                  <p className="text-gray-300">{project.solution}</p>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <p className="text-sm text-gray-500 uppercase tracking-wider mb-3">
-                  Impact
-                </p>
-                <p className="text-2xl font-bold text-green-400">
-                  {project.impact}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, j) => (
-                  <span
-                    key={j}
-                    className="px-3 py-1 bg-[#1a1a1a] border border-gray-800 rounded-full text-xs text-gray-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Process Timeline */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16">How I Work</h2>
-
-        <div className="grid md:grid-cols-5 gap-8">
+      <section className="px-6 md:px-12 lg:px-24 py-32 max-w-[1600px] mx-auto">
+        <h3 className="text-4xl font-bold mb-16 text-center">Process</h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {processSteps.map((step, i) => (
             <motion.div
               key={i}
@@ -323,13 +287,100 @@ const App = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative"
+              className="relative bg-[#0f0f0f]/50 backdrop-blur-sm border border-gray-900/50 rounded-xl p-6 hover:bg-[#0f0f0f]/80 hover:backdrop-blur-xl hover:border-gray-800 transition-all duration-300"
             >
               <div className="text-4xl font-bold text-gray-800 mb-4">
                 {i + 1}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-sm">{step.desc}</p>
+              <h3 className="text-3xl font-semibold mb-2">{step.title}</h3>
+              <p className="text-gray-500 text-lg">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Client Work */}
+      <section
+        id="client-work"
+        ref={clientWorkRef}
+        className="px-6 md:px-12 lg:px-24 py-20 max-w-7xl mx-auto"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isClientWorkInView ? { opacity: 1 } : {}}
+          className="mb-20 text-center"
+        >
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">Projects</h2>
+          <p className="text-gray-500 text-lg">
+            Built to learn, designed to perform
+          </p>
+        </motion.div>
+
+        <div className="space-y-32">
+          {projects.map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isClientWorkInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.2, duration: 0.6 }}
+              className="project-card group"
+            >
+              <div className="flex flex-col md:flex-row md:items-start gap-12 border-l-2 border-gray-800 pl-8 transition-all duration-500 hover:border-gray-600">
+                <div className="flex-1 space-y-6">
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-3xl md:text-4xl font-bold transition-colors duration-300 group-hover:text-gray-300">
+                      {project.title}
+                    </h3>
+                    <a
+                      href={project.link}
+                      className="text-gray-500 hover:text-gray-300 transition-all duration-300 transform hover:scale-110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink size={24} />
+                    </a>
+                  </div>
+
+                  <p className="text-sm text-gray-500 uppercase tracking-widest font-medium">
+                    {project.type}
+                  </p>
+
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    <p className="text-sm text-gray-500">
+                      <span className="text-gray-400 font-medium">Role:</span>{" "}
+                      {project.role}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      <span className="text-gray-400 font-medium">Focus:</span>{" "}
+                      {project.focus.join(", ")}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-4">
+                    {project.tech.map((t, j) => (
+                      <span
+                        key={j}
+                        className="px-4 py-2 bg-[#111] text-gray-400 text-xs uppercase tracking-wider rounded-full border border-gray-800 hover:border-gray-600 hover:bg-[#0d0d0d] transition-all duration-300"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+               <div className="w-full md:w-[480px] h-80 rounded-lg border border-gray-800 transition-all duration-500 group-hover:border-gray-600 group-hover:shadow-2xl group-hover:shadow-black/50 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>                                      
+              </div>
             </motion.div>
           ))}
         </div>
@@ -366,9 +417,15 @@ const App = () => {
       </section> */}
 
       {/* Book a Call */}
-      <section id="contact" className="px-6 md:px-12 lg:px-24 py-24 mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Let's Build Something
+      <section
+        id="contact"
+        className="px-6 md:px-12 lg:px-24 py-24 mx-auto text-center"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
+          Let's Build{" "}
+          <span className="text-5xl font-bold mb-6">
+            {userName ? `, ${userName}` : `Something!!`}
+          </span>
         </h2>
         <p className="text-xl text-gray-400 mb-12">
           30-minute discovery call. No pressure, just a conversation about your
@@ -381,24 +438,23 @@ const App = () => {
         >
           {/* Click me */}
         </div>
-          <Cal
-            namespace="30min"
-            calLink="kevin-solanki-rnnepa/30min"
-            config={{ layout: "month_view" }}
-          />
+        <Cal
+          namespace="30min"
+          calLink="kevin-solanki-rnnepa/30min"
+          config={{ layout: "month_view" }}
+        />
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-900 px-6 md:px-12 lg:px-24 py-16 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+      <footer className="border-t border-gray-900 px-6 md:px-12 lg:px-24 py-16 max-w-6xl mx-auto">
+        <div className="flex items-start justify-between gap-12 mb-12 ">
           <div>
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+            <h3 className="text-sm  uppercase tracking-wider text-gray-500 mb-4">
               Skills
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              React, Next.js, TypeScript, Node.js, GraphQL, PostgreSQL, Tailwind
-              CSS, Framer Motion, GSAP, WebGL, Three.js, AWS, Docker, CI/CD,
-              Performance Optimization, Accessibility (WCAG)
+            <p className="text-sm max-w-sm text-gray-600 leading-relaxed">
+              React, Next.js, TypeScript, Node.js, PostgreSQL, Tailwind CSS,
+              Framer Motion, GSAP, WebGL, Three.js
             </p>
           </div>
           <div>
@@ -407,13 +463,13 @@ const App = () => {
             </h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/itskvsin"
                 className="text-gray-600 hover:text-gray-400 transition-colors"
               >
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="www.linkedin.com/in/kevin-solanki-8bb1082a2"
                 className="text-gray-600 hover:text-gray-400 transition-colors"
               >
                 <Linkedin size={24} />
