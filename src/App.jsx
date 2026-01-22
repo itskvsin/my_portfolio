@@ -275,29 +275,6 @@ const App = () => {
       )}
 
 
-      {/* Process Timeline */}
-      <section className="px-6 md:px-12 lg:px-24 py-32 max-w-[1600px] mx-auto">
-        <h3 className="text-4xl font-bold mb-16 text-center">Process</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-          {processSteps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative bg-[#0f0f0f]/50 backdrop-blur-sm border border-gray-900/50 rounded-xl p-6 hover:bg-[#0f0f0f]/80 hover:backdrop-blur-xl hover:border-gray-800 transition-all duration-300"
-            >
-              <div className="text-4xl font-bold text-gray-800 mb-4">
-                {i + 1}
-              </div>
-              <h3 className="text-3xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-lg">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Featured Client Work */}
       <section
@@ -386,6 +363,30 @@ const App = () => {
         </div>
       </section>
 
+      {/* Process Timeline */}
+      <section className="px-6 md:px-12 lg:px-24 py-32 max-w-[1600px] mx-auto">
+        <h3 className="text-4xl font-bold mb-16 text-center">Process</h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+          {processSteps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative bg-[#0f0f0f]/50 backdrop-blur-sm border border-gray-900/50 rounded-xl p-6 hover:bg-[#0f0f0f]/80 hover:backdrop-blur-xl hover:border-gray-800 transition-all duration-300"
+            >
+              <div className="text-4xl font-bold text-gray-800 mb-4">
+                {i + 1}
+              </div>
+              <h3 className="text-3xl font-semibold mb-2">{step.title}</h3>
+              <p className="text-gray-500 text-lg">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      
       {/* Personal Projects */}
       {/* <section className="px-6 md:px-12 lg:px-24 py-24 max-w-7xl mx-auto">
         <div className="mb-12">
