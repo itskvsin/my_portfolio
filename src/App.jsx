@@ -62,7 +62,7 @@ const App = () => {
       role: "Full Implementation",
       focus: ["UI/UX Design", "Frontend Development", "Motion & Interaction"],
       tech: ["Next.js", "React", "Framer Motion"],
-      image: 'src/assets/Savate/images/projects/mtma.png',
+      image: "src/assets/Savate/images/projects/mtma.png",
       link: "https://mt-music-academy.vercel.app/",
     },
     {
@@ -77,23 +77,23 @@ const App = () => {
         "Motion Performance",
       ],
       tech: ["Next.js", "React", "GSAP", "Framer Motion"],
-      image: 'src/assets/Savate/images/projects/teamk.png',
+      image: "src/assets/Savate/images/projects/teamk.png",
       link: "https://teamk.vercel.app/",
     },
     {
-      title: "YNOTNOW",
+      title: "Woodvale",
       type: "Collaborative Project",
       description:
-        "A headless e-commerce frontend featuring product listings, filtering, variant selection, and a persistent cart experience, built with modern e-commerce best practices.",
+        "A modern restaurant and banquet website designed to showcase dining experience, services, and event bookings. Features elegant UI, responsive layout, and smooth navigation to enhance user engagement and booking conversions.",
       role: "Frontend Development",
       focus: [
-        "E-Commerce UI",
-        "Cart & Checkout Logic",
+        "UI/UX Design",
+        "Responsive Layout",
         "Performance & Accessibility",
       ],
-      tech: ["Next.js", "React", "Shopify Storefront API"],
-      image: 'src/assets/Savate/images/projects/ynotnow.png',
-      link: "https://ynotnow-one.vercel.app/demo",
+      tech: ["Next.js", "React", "Modern UI Design"],
+      image: "src/assets/Savate/images/projects/woodvale.png",
+      link: "https://woodvale-nine.vercel.app/",
     },
   ];
 
@@ -196,7 +196,7 @@ const App = () => {
               variants={fadeInUp}
               className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl"
             >
-              Senior frontend engineer specializing in high-performance web
+              Frontend engineer specializing in high-performance web
               applications. From MVP to enterprise, I ship clean code that
               delivers results.
             </motion.p>
@@ -274,8 +274,6 @@ const App = () => {
         </motion.section>
       )}
 
-
-
       {/* Featured Client Work */}
       <section
         id="client-work"
@@ -349,14 +347,14 @@ const App = () => {
                   </div>
                 </div>
 
-               <div className="w-full md:w-[480px] h-80 rounded-lg border border-gray-800 transition-all duration-500 group-hover:border-gray-600 group-hover:shadow-2xl group-hover:shadow-black/50 relative overflow-hidden">
-                  <img 
-                    src={project.image} 
+                <div className="w-full md:w-[480px] h-80 rounded-lg border border-gray-800 transition-all duration-500 group-hover:border-gray-600 group-hover:shadow-2xl group-hover:shadow-black/50 relative overflow-hidden">
+                  <img
+                    src={project.image}
                     alt={`${project.title} preview`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>                                      
+                </div>
               </div>
             </motion.div>
           ))}
@@ -366,7 +364,7 @@ const App = () => {
       {/* Process Timeline */}
       <section className="px-6 md:px-12 lg:px-24 py-32 max-w-[1600px] mx-auto">
         <h3 className="text-4xl font-bold mb-16 text-center">Process</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {processSteps.map((step, i) => (
             <motion.div
@@ -386,7 +384,7 @@ const App = () => {
           ))}
         </div>
       </section>
-      
+
       {/* Personal Projects */}
       {/* <section className="px-6 md:px-12 lg:px-24 py-24 max-w-7xl mx-auto">
         <div className="mb-12">
